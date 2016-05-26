@@ -1,0 +1,76 @@
+package com.epam.main.task_2.person;
+
+/**
+ * Created by Mayer Roman on 25.05.2016.
+ */
+class Names {
+    private static String[] names = {
+            "Jacob",
+            "Emily",
+            "Michael",
+            "Emma",
+            "Madison",
+            "Matthew",
+            "Olivia",
+            "Ethan",
+            "Hannah",
+            "Andrew",
+            "Abigail",
+            "Daniel",
+            "Isabella",
+            "William",
+            "Ashley",
+            "Joseph",
+            "Samantha",
+            "Christopher",
+            "Elizabeth",
+            "Anthony",
+            "Alexis",
+            "Ryan",
+            "Sarah",
+            "Nicholas",
+            "Grace",
+            "David",
+            "Alyssa",
+            "Alexander",
+            "Sophia",
+            "Tyler",
+            "Lauren",
+            "James",
+            "Brianna",
+            "John",
+            "Kayla",
+            "Dylan",
+            "Natalie",
+            "Nathan",
+            "Anna",
+            "Jonathan",
+            "Jessica",
+            "Brandon",
+            "Taylor",
+            "Samuel",
+            "Chloe",
+            "Christian",
+            "Hailey",
+            "Benjamin",
+            "Ava",
+            "Zachary",
+            "Jasmine",
+            "Logan",
+            "Sydney",
+            "Jose",
+            "Victoria",
+            "Noah",
+            "Ella",
+            "Justin",
+            "Mia",
+            "Elijah",
+            "Morgan",
+            "Gabriel",
+            "Julia"};
+
+    public static String getRandom() {
+        return names[(int) (Math.random() * names.length)];
+    }
+
+}
