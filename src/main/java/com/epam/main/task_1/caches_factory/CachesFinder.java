@@ -15,6 +15,8 @@ import java.util.jar.JarFile;
  */
 class CachesFinder {
 
+    private final static String CLASS_EXT = ".class";
+
     public static List<Class<?>> findClassesInPackage(String packageName) {
         List<Class<?>> classes;
 
@@ -54,12 +56,11 @@ class CachesFinder {
     private static List<Class<?>> findUsingClassFiles(String packageName, File fileDirectory) {
         List<Class<?>> classes = new ArrayList<>();
 
-        final int CLASS_EXT = 6;
 
         String[] files = fileDirectory.list();
         for (int i = 0; i < files.length; i++) {
-            if (files[i].endsWith(".class")) {
-                String className = packageName + '.' + files[i].substring(0, files[i].length() - CLASS_EXT);
+            if (files[i].endsWith(CLASS_EXT)) {
+                String className = packageName + '.' + files[i].substring(0, files[i].length() - CLASS_EXT.length());
                 try {
                     classes.add(Class.forName(className));
                 } catch (ClassNotFoundException e) {
@@ -82,7 +83,7 @@ class CachesFinder {
             String entryName = entry.getName();
 
             if (entryName.startsWith(relPath) && entryName.length() > (relPath.length() + "/".length())) {
-                String className = entryName.replace('/', '.').replace('\\', '.').replace(".class", "");
+                String className = entryName.replace('/', '.').replace('\\', '.').replace(CLASS_EXT, "");
                 try {
                     classes.add(Class.forName(className));
                 } catch (ClassNotFoundException e) {
