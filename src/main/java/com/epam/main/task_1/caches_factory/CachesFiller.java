@@ -11,21 +11,15 @@ import java.util.Map;
  */
 class CachesFiller {
 
-    public static void fillCaches(Map<String, Cache> createdCaches, HashSet<String> annotatedCacheTypes) {
-        HashSet<String> cacheTypes = annotatedCacheTypes;
+    public static void fillCaches(Map<String, Cache> createdCaches) {
 
-        String createdCacheType;
         for (Map.Entry<String, Cache> cacheEntry : createdCaches.entrySet()) {
-            createdCacheType = cacheEntry.getKey();
-
-            if (cacheTypes.contains(createdCacheType)) {
-                cacheFiller(cacheEntry.getValue(), createdCacheType);
-            }
+            cacheFiller(cacheEntry.getValue(), cacheEntry.getKey());
         }
     }
 
     private static void cacheFiller(Cache cache, String cacheType) {
-        HashMap<Integer, String> caches = new HashMap<>();
+        Map<Integer, String> caches = new HashMap<>();
         for (int i = 0; i < 10; i++) {
             caches.put(i, cacheType);
         }

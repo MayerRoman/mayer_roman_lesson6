@@ -2,8 +2,8 @@ package com.epam.main.task_1.caches_factory;
 
 import com.epam.main.task_1.cache.Cache;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -11,13 +11,13 @@ import java.util.Map;
  */
 class CachesCreator {
 
-    public static Map<String, Cache> createCaches(ArrayList<Class<?>> classes) {
-        ArrayList<Class<?>> cacheClasses = classes;
+    public static Map<String, Cache> createCaches(List<Class<?>> classes) {
+        List<Class<?>> cacheClasses = classes;
 
         com.epam.main.task_1.annotation.Cache cacheAnnotation;
         String cacheAnnotationName;
 
-        HashMap<String, Cache> cacheTypesAndInstances = new HashMap<>();
+        Map<String, Cache> cacheTypesAndInstances = new HashMap<>();
         for (Class aClass : cacheClasses) {
             cacheAnnotation =
                     (com.epam.main.task_1.annotation.Cache) aClass.getAnnotation(com.epam.main.task_1.annotation.Cache.class);

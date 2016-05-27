@@ -33,7 +33,7 @@ public class Runner {
 
         System.out.println("\n" + "applyFunction reduceWomanAge toStream:");
         Consumer<Person> reduceWomanAge = person -> {
-            if (person.getAge() > 10 && person.getSex() == Sexes.female) {
+            if (person.getAge() > 10 && person.getSex() == Sexes.FEMALE) {
                 person.setAge(person.getAge() - 10);
             }
             System.out.println(person);

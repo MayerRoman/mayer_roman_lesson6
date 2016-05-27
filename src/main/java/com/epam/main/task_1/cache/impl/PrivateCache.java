@@ -2,7 +2,7 @@ package com.epam.main.task_1.cache.impl;
 
 import com.epam.main.task_1.cache.Cache;
 
-import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Mayer Roman on 19.05.2016.
@@ -11,15 +11,15 @@ import java.util.HashMap;
 @com.epam.main.task_1.annotation.Cache(name = "privateCache")
 public class PrivateCache implements Cache {
 
-    private HashMap<Integer, String> cache;
+    private Map<Integer, String> cache;
 
     @Override
-    public void put(HashMap<Integer, String> cache) {
+    public void put(Map<Integer, String> cache) {
         this.cache = cache;
     }
 
     @Override
-    public HashMap<Integer, String> get() {
+    public Map<Integer, String> get() {
         return cache;
     }
 }

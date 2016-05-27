@@ -17,7 +17,7 @@ public class Injector {
     public void inject(Consumer consumer, Map<String, Cache> caches) {
         Class<?> consumerClass = consumer.getClass();
 
-        ArrayList<Field> classFields = new ArrayList<>();
+        List<Field> classFields = new ArrayList<>();
         extractFields(classFields, consumerClass);
 
         for (Field field : classFields) {
@@ -25,7 +25,7 @@ public class Injector {
         }
     }
 
-    private void extractFields(ArrayList<Field> fields, Class<?> classForExtracting) {
+    private void extractFields(List<Field> fields, Class<?> classForExtracting) {
         Field[] thisClassFields = classForExtracting.getDeclaredFields();
         Collections.addAll(fields, thisClassFields);
 
